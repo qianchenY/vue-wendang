@@ -1,7 +1,7 @@
 <template>
   <div class="album">
     <div class="m-desc">
-      <p>涉及栏目：设备介绍</p>
+      <p>涉及栏目：设备介绍。</p>
     </div>
     <ul class="m-list mt-25">
         <li class="m-item">

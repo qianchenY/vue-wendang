@@ -1,5 +1,5 @@
 <template>
-    <div class="main-right">
+    <div class="main-right box-sizing box">
         <h4 class="m-title">{{activeNav}}</h4>
         <router-view class="mt-25"></router-view>         
     </div>

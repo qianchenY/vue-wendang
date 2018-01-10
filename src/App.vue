@@ -32,21 +32,32 @@ export default {
 .main-left{
   position: fixed;
   *position: absolute;
-  left: 0;
+  left: -250px;
   top: 56px;
   width: 250px;
   height: 100%;
   padding: 25px 0;
   border-right: 1px solid #ddd;
+  @include transition;
+
+  &.show{
+    left: 0;
+  }
 }
 
 .main-right{
+  width: 90%;
   padding: {
     top: 81px;
-    left: 276px;
+    left: 300px;
     bottom: 25px;
-    right: 25px;
+    right: 50px;
   };
+  @include transition;
+
+  &.pl-50{
+    padding-left: 50px;
+  }
 }
 
 .m-title{
@@ -57,13 +68,37 @@ export default {
 }
 
 .m-desc{
+  position: relative;
+  padding: {
+    top: 50px;
+    left: 15px;
+    right: 15px;
+  };
   font-size: 16px;
   line-height: 25px;
+
+  &:before{
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "简介";
+    display: block;
+    width: 100%;
+    text-indent: 15px;
+    line-height: 35px;
+    font-size: 16px;
+    color: #666;
+    border: {
+      left: 3px solid #5bc0de;
+    };
+    background-color: #f4f8fa;
+  }
 }
 
 // 上一篇&&下一篇
 .m-other{
   overflow: hidden;
+  visibility: hidden;
 }
 
 .m-other-item{
@@ -83,6 +118,34 @@ export default {
 }
 
 // 内容列表
+.m-list{
+  position: relative;
+  padding: {
+    top: 50px;
+    left: 15px;
+    right: 15px;
+  };
+  font-size: 16px;
+  line-height: 25px;
+
+  &:before{
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "操作步骤";
+    display: block;
+    width: 100%;
+    text-indent: 15px;
+    line-height: 35px;
+    font-size: 16px;
+    color: #666;
+    border: {
+      left: 3px solid #5bc0de;
+    };
+    background-color: #f4f8fa;
+  }
+}
+
 .m-item{
   margin: {
     top: 10px;

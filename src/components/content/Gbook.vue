@@ -1,7 +1,7 @@
 <template>
   <div class="gbook">
     <div class="m-desc">
-      <p>涉及页面：首页及联系我们页面的在线留言</p>
+      <p>涉及页面：首页及联系我们页面的在线留言。</p>
     </div>
     <ul class="m-list mt-25">
         <li class="m-item">

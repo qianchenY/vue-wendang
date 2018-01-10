@@ -1,13 +1,16 @@
 <template>
-  <div class="main-left box-sizing">
-    <p class="mail-left-logo font-none align-center">
-        <img src="../assets/logo.png" alt="九鑫传媒">
-    </p>
-    <ul class="nav-list mt-25">
+  <div class="main-left box-sizing show">
+    <ul class="nav-list">
         <li class="nav-item" v-for="(item, index) in nav" :key="index" @click="updateActiveNav(index)">
             <router-link :class="{current: item.name == activeNav}" :to="item.path">{{item.name}}</router-link>
         </li>
     </ul>
+    <p id="main-left-close" class="main-left-close">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </p>
   </div>
 </template>
 
@@ -24,6 +27,23 @@ export default {
   },
   methods:{
       ...mapMutations(["updateActiveNav"]),
+  },
+  created: function(){
+      $(function(){
+          var $navclose = $("#main-left-close"),
+              $mainleft = $(".main-left").eq(0),
+              $mainright = $(".main-right").eq(0);
+          
+          $navclose.click(function(e){
+              if($mainleft.hasClass('show')){
+                  $mainleft.removeClass('show');
+                  $mainright.addClass('pl-50');
+              }else{
+                  $mainleft.addClass('show');
+                  $mainright.removeClass('pl-50');
+              }   
+          });
+      })
   }
 }
 </script>
@@ -31,12 +51,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 $color: #2681d6;
-
-.main-left-logo{
-    img{
-        max-width: 100%;
-    }
-}
 
 .nav-item{
     a{
@@ -52,6 +66,33 @@ $color: #2681d6;
 
         &.current{
             background-color: #e5e5e5;
+        }
+    }
+}
+
+.main-left-close{
+    position: absolute;
+    top: 25px;
+    right: -30px;
+    cursor: pointer;
+
+    span{       
+        margin: {
+            top: 1px;
+        };
+        display: block;
+        width: 15px;
+        height: 2px;
+        background-color: #ccc;
+
+        &:first-child{
+            margin-top: 0;
+        }
+    }
+
+    &:hover{
+        span{
+            background-color: #333;
         }
     }
 }

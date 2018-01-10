@@ -1,7 +1,7 @@
 <template>
   <div class="product">
     <div class="m-desc">
-      <p>涉及栏目：产品中心及其子栏目</p>
+      <p>涉及栏目：产品中心及其子栏目。</p>
     </div>
     <ul class="m-list mt-25">
         <li class="m-item">

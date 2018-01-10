@@ -1,7 +1,7 @@
 <template>
   <div class="linklist">
     <div class="m-desc">
-      <p>涉及页面：首页底部</p>
+      <p>涉及页面：首页底部。</p>
     </div>
     <ul class="m-list mt-25">
         <li class="m-item">

@@ -1,7 +1,7 @@
 <template>
   <div class="htmlstatic">
     <div class="m-desc">
-      <p>每次网站后台修改或添加东西最后一步都要做生成更新！！！否则不会生效</p>
+      <p>每次网站后台修改或添加东西最后一步都要做生成更新！！！否则不会生效。</p>
     </div>
     <ul class="m-list mt-25">
         <li class="m-item">

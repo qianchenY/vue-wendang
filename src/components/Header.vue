@@ -1,6 +1,9 @@
 <template>
-  <div class="hd box-sizing">
-    <h3 class="hd-title">网站后台使用文档</h3>
+  <div class="hd box-sizing overflow">
+    <p class="hd-logo left">
+        <img src="../assets/logo.png" alt="九鑫传媒">
+    </p>  
+    <h3 class="hd-title right">网站后台使用文档</h3>
   </div>
 </template>
 
@@ -29,8 +32,16 @@ export default {
       border: {
         bottom: 1px solid #ddd;
       };
-    }
+  }
 
+  .hd-logo{
+      height: 55px;
+      img{
+          vertical-align: middle;
+          width: 100%;
+          max-width: 116px;
+      }
+  }
   .hd-title{
       font-size: 16px;
       color: #333;
