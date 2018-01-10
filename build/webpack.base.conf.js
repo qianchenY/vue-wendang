@@ -2,6 +2,7 @@
 const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
+const webpack = require('webpack')
 const vueLoaderConfig = require('./vue-loader.conf')
 
 function resolve (dir) {
@@ -29,6 +30,15 @@ module.exports = {
       '@': resolve('src'),
     }
   },
+  plugins: [
+    // 配置全局使用 jquery
+    new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        jquery: "jquery",
+        "window.jQuery": "jquery"
+    })
+  ],
   module: {
     rules: [
       {
