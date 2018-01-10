@@ -1,0 +1,170 @@
+@charset "UTF-8";
+//公共变量
+$width:1200px;
+$color: #2681d6;
+$fontfamily: 微软雅黑;
+
+@mixin float($value:left){
+    float: $value;
+}
+
+@mixin margin($top:0,$right:auto,$bottom:0,$left:auto){
+    margin: {
+        top: $top;
+        right: $right;
+        bottom: $bottom;
+        left: $left;
+    };
+}
+
+@mixin inline-block(){
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;    
+}
+
+@mixin transition($type:all,$time:350ms){
+    transition: $type $time;
+}
+
+@mixin font-size($value:16px){
+    font-size: $value;
+}
+
+//公共样式文件
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 微软雅黑;
+  @include font-size;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  tap-highlight-color: transparent;
+  focus-ring-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-focus-ring-color: transparent;
+  -moz-tap-highlight-color: transparent;
+  -moz-focus-ring-color: transparent;
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+img {
+  border: 0px solid #ccc;
+}
+
+table {
+  max-width: 100%;
+}
+
+input:focus, textarea:focus{
+  outline: none;
+}
+
+em,i{
+    font-style: normal;
+}
+
+.left {
+    @include float;
+}
+  
+.right {
+    @include float(right);
+}
+  
+.margin {
+    @include margin;
+}
+  
+.overflow {
+    overflow: hidden;
+}
+  
+.width {
+    width: $width;
+}
+  
+.box {
+    margin: 0 auto;
+    width: $width;
+    overflow: hidden;
+}
+  
+.transition {
+    @include transition;
+}
+  
+.box-sizing {
+    box-sizing: border-box;
+}
+  
+.czjz {
+    position: relative;
+    top: 50%;
+    transform: translate(0px, -50%);
+}
+  
+.relative {
+    position: relative;
+}
+  
+@for $i from 5 through 60 {
+    @if($i % 5==0) {
+        .mt-#{$i} {
+            margin-top: $i + 0px;
+        }
+    }
+}
+  
+.mt-none {
+    margin: {
+        top: 0 !important;
+    };
+}
+  
+.mr-none {
+    margin: {
+        right: 0 !important;
+    };
+}
+  
+.mb-none {
+    margin: {
+        bottom: 0 !important;
+    };
+}
+  
+.ml-none {
+    margin: {
+        left: 0 !important;
+    };
+}
+
+.pl-45{
+    padding-left: 45px;
+}
+  
+.font-none {
+    line-height: 0;
+    font-size: 0;
+}
+
+.align-center{
+    text-align: center;
+}
+  
+.background-none {
+    background: none !important;
+}
